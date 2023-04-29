@@ -1,12 +1,25 @@
 /**
  * 来自于copy_btn.js paste.js合并
- * 简单图床-复制
+ * 简单图床-复制链接
+ * 2023-01-30
  */
-var copyBtn = document.getElementsByClassName('copyBtn1')[0];
-copyBtn.onclick = function() {
+document.getElementsByClassName('copyBtn1')[0].onclick = function () {
     var copyVal = document.getElementById("links");
     copyVal.select();
-    try {
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(copyVal.value).then(function () {
+            //success info
+            new $.zui.Messager("复制成功", {
+                type: "primary", // 定义颜色主题 
+                icon: "ok-sign" // 定义消息图标
+            }).show();
+            console.log("复制成功");
+        }, function () {
+            //fail info
+            alert("复制失败");
+        });
+
+    } else {
         if (document.execCommand('copy', false, null)) {
             //success info
             new $.zui.Messager("复制成功", {
@@ -18,17 +31,26 @@ copyBtn.onclick = function() {
             //fail info
             alert("复制失败");
         }
-    } catch (err) {
-        //fail info
-        alert(err);
     }
 }
 
-var copyBtn = document.getElementsByClassName('copyBtn2')[0];
-copyBtn.onclick = function() {
+document.getElementsByClassName('copyBtn2')[0].onclick = function () {
     var copyVal = document.getElementById("bbscode");
     copyVal.select();
-    try {
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(copyVal.value).then(function () {
+            //success info
+            new $.zui.Messager("复制成功", {
+                type: "primary", // 定义颜色主题 
+                icon: "ok-sign" // 定义消息图标
+            }).show();
+            console.log("复制成功");
+        }, function () {
+            //fail info
+            alert("复制失败");
+        });
+
+    } else {
         if (document.execCommand('copy', false, null)) {
             //success info
             new $.zui.Messager("复制成功", {
@@ -40,17 +62,26 @@ copyBtn.onclick = function() {
             //fail info
             alert("复制失败");
         }
-    } catch (err) {
-        //fail info
-        alert(err);
     }
 }
 
-var copyBtn = document.getElementsByClassName('copyBtn3')[0];
-copyBtn.onclick = function() {
+document.getElementsByClassName('copyBtn3')[0].onclick = function () {
     var copyVal = document.getElementById("markdown");
     copyVal.select();
-    try {
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(copyVal.value).then(function () {
+            //success info
+            new $.zui.Messager("复制成功", {
+                type: "primary", // 定义颜色主题 
+                icon: "ok-sign" // 定义消息图标
+            }).show();
+            console.log("复制成功");
+        }, function () {
+            //fail info
+            alert("复制失败");
+        });
+
+    } else {
         if (document.execCommand('copy', false, null)) {
             //success info
             new $.zui.Messager("复制成功", {
@@ -62,17 +93,26 @@ copyBtn.onclick = function() {
             //fail info
             alert("复制失败");
         }
-    } catch (err) {
-        //fail info
-        alert(err);
     }
 }
 
-var copyBtn = document.getElementsByClassName('copyBtn4')[0];
-copyBtn.onclick = function() {
+document.getElementsByClassName('copyBtn4')[0].onclick = function () {
     var copyVal = document.getElementById("html");
     copyVal.select();
-    try {
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(copyVal.value).then(function () {
+            //success info
+            new $.zui.Messager("复制成功", {
+                type: "primary", // 定义颜色主题 
+                icon: "ok-sign" // 定义消息图标
+            }).show();
+            console.log("复制成功");
+        }, function () {
+            //fail info
+            alert("复制失败");
+        });
+
+    } else {
         if (document.execCommand('copy', false, null)) {
             //success info
             new $.zui.Messager("复制成功", {
@@ -84,17 +124,57 @@ copyBtn.onclick = function() {
             //fail info
             alert("复制失败");
         }
-    } catch (err) {
-        //fail info
-        alert(err);
     }
 }
 
-var copyBtn = document.getElementsByClassName('copyBtn5')[0];
-copyBtn.onclick = function() {
+document.getElementsByClassName('copyBtn5')[0].onclick = function () {
+    var copyVal = document.getElementById("thumb");
+    copyVal.select();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(copyVal.value).then(function () {
+            //success info
+            new $.zui.Messager("复制成功", {
+                type: "primary", // 定义颜色主题 
+                icon: "ok-sign" // 定义消息图标
+            }).show();
+            console.log("复制成功");
+        }, function () {
+            //fail info
+            alert("复制失败");
+        });
+
+    } else {
+        if (document.execCommand('copy', false, null)) {
+            //success info
+            new $.zui.Messager("复制成功", {
+                type: "primary", // 定义颜色主题 
+                icon: "ok-sign" // 定义消息图标
+            }).show();
+            console.log("复制成功");
+        } else {
+            //fail info
+            alert("复制失败");
+        }
+    }
+}
+
+document.getElementsByClassName('copyBtn6')[0].onclick = function () {
     var copyVal = document.getElementById("del");
     copyVal.select();
-    try {
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(copyVal.value).then(function () {
+            //success info
+            new $.zui.Messager("复制成功", {
+                type: "primary", // 定义颜色主题 
+                icon: "ok-sign" // 定义消息图标
+            }).show();
+            console.log("复制成功");
+        }, function () {
+            //fail info
+            alert("复制失败");
+        });
+
+    } else {
         if (document.execCommand('copy', false, null)) {
             //success info
             new $.zui.Messager("复制成功", {
@@ -106,67 +186,25 @@ copyBtn.onclick = function() {
             //fail info
             alert("复制失败");
         }
-    } catch (err) {
-        //fail info
-        alert(err);
     }
 }
 
-// btn状态
-$('#btnLinks').on('click', function() {
+// 复制按钮状态
+$('#btnLinks, #btnBbscode, #btnMarkDown, #btnHtml, #btnThumb, #btnDel').on('click', function () {
     var $btn = $(this);
+    $btn.addClass('btn-success load-indicator loading');
+    $btn.remove('data-toggle data-original-title');
     $btn.button('loading');
-
-    // 此处使用 setTimeout 来模拟你的复杂功能逻辑
-    setTimeout(function() {
+    // 此处使用 setTimeout 来模拟复杂功能逻辑
+    setTimeout(function () {
+        $btn.removeClass('btn-success load-indicator loading');
         $btn.button('reset');
-    }, 2000);
+    }, 666);
 });
 
-$('#btnBbscode').on('click', function() {
-    var $btn = $(this);
-    $btn.button('loading');
-
-    // 此处使用 setTimeout 来模拟你的复杂功能逻辑
-    setTimeout(function() {
-        $btn.button('reset');
-    }, 2000);
-});
-
-$('#btnMarkDown').on('click', function() {
-    var $btn = $(this);
-    $btn.button('loading');
-
-    // 此处使用 setTimeout 来模拟你的复杂功能逻辑
-    setTimeout(function() {
-        $btn.button('reset');
-    }, 2000);
-});
-
-$('#btnHtml').on('click', function() {
-    var $btn = $(this);
-    $btn.button('loading');
-    // 此处使用 setTimeout 来模拟你的复杂功能逻辑
-    setTimeout(function() {
-        $btn.button('reset');
-    }, 2000);
-});
-
-$('#btndel').on('click', function() {
-    var $btn = $(this);
-    $btn.button('loading');
-
-    // 此处使用 setTimeout 来模拟你的复杂功能逻辑
-    setTimeout(function() {
-        $btn.button('reset');
-    }, 2000);
-});
-
-/****************************************************************
- * 复制、截图 简单图床修改版
- */
-(function() {
-    document.addEventListener('paste', function(e) {
+/** 粘贴上传 2023-01-30 */
+(function () {
+    document.addEventListener('paste', function (e) {
         var items = ((e.clipboardData || window.clipboardData).items) || [];
         var file = null;
 
@@ -180,51 +218,162 @@ $('#btndel').on('click', function() {
         }
 
         if (!file) {
-            alert('粘贴内容非图片!');
+            $.zui.messager.show('粘贴内容非图片!', {
+                icon: 'bell',
+                time: 3000,
+                type: 'danger',
+                placement: 'top'
+            });
             return;
         }
+
         var formData = new FormData();
         formData.append('file', file);
-
+        formData.append('sign', Date.now());
         var xhr = new XMLHttpRequest();
-        xhr.onload = function() {
-            try {
-                var result = JSON.parse(this.responseText);
-                if (result.result === 'success') {
-                    var links = document.getElementById("links");
-                    links.innerHTML += result.url + "\n";
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 1) {
+                $.zui.messager.show('粘贴上传中...', {
+                    icon: 'bell',
+                    time: 3000,
+                    type: 'primary',
+                    placement: 'top'
+                });
+                $(".uploader").addClass("load-indicator loading"); // 增加正在上传状态
+            }
 
-                    var bbscode = document.getElementById("bbscode");
-                    bbscode.innerHTML += "[img]" + result.url + "[/img]\n";
+            if (xhr.readyState >= 4) {
+                $.zui.messager.show('粘贴上传中...', {
+                    icon: 'bell',
+                    time: 3000,
+                    type: 'primary',
+                    placement: 'top'
+                });
+                $(".uploader").removeClass("load-indicator loading"); // 移除正在上传状态
+            }
+        }
 
-                    var markdown = document.getElementById("markdown");
-                    markdown.innerHTML += "![](" + result.url + ")\n";
+        xhr.onload = function () {
+            var result = JSON.parse(this.responseText);
+            if (result.result === 'success') {
+                document.getElementById("links").innerHTML += result.url + "\r\n";
+                document.getElementById("bbscode").innerHTML += "[img]" + result.url + "[/img]\r\n";
+                document.getElementById("markdown").innerHTML += "![" + result.srcName + "](" + result.url + ")\r\n";
+                document.getElementById("html").innerHTML += '<img src="' + result.url + '" alt="' + result.srcName + '" />\r\n';
+                document.getElementById("thumb").innerHTML += result.thumb + "\r\n";
+                document.getElementById("del").innerHTML += result.del + "\r\n";
 
-                    var html = document.getElementById("html");
-                    html.innerHTML += "&lt;img src=\"" + result.url + "\" /&#62;\n";
+                $.zui.messager.show(/** result.srcName + */'粘贴上传成功', {
+                    icon: 'bell',
+                    time: 4000,
+                    type: 'success',
+                    placement: 'top'
+                });
 
-                    var del = document.getElementById("del");
-                    del.innerHTML += result.del + "\n";
-
-                } else {
-                    alert('上传失败1');
+                try { // 储存上传记录
+                    console.log('localStorage ok!');
+                    $.zui.store.set(result.srcName, result)
+                } catch (err) {
+                    console.log('localStorage failed:' + err);
                 }
-            } catch (e) {
-                alert('上传失败2');
+            } else {
+                $.zui.messager.show('上传失败...' + result.message, {
+                    icon: 'bell',
+                    time: 4000,
+                    type: 'danger',
+                    placement: 'top'
+                });
             }
         };
-        xhr.onerror = function() {
-            alert('上传失败3');
+
+        xhr.onerror = function () {
+            $.zui.messager.show('因网络问题导致的上传失败...', {
+                icon: 'bell',
+                time: 4000,
+                type: 'primary',
+                placement: 'top'
+            });
         };
-        xhr.open('POST', './application/upload.php', true);
+        xhr.open('POST', 'app/upload.php', true);
         xhr.send(formData);
     });
 })();
-/******************************************************************/
 
-// 导航状态
-$('.nav-pills').find('a').each(function() {
-    if (this.href == document.location.href) {
-        $(this).parent().addClass('active'); // this.className = 'active';
-    }
-});
+// 检测浏览器是否支持cookie
+if (navigator.cookieEnabled === false) {
+    new $.zui.Messager('浏览器不支持cookie, 无法保存登录信息', {
+        type: 'black',
+        icon: 'bell',
+        time: 4500,
+        placement: 'top'
+    }).show();
+
+    console.log('浏览器不支持cookie');
+}
+
+// 检测浏览器是否支持本地存储
+if ($.zui.store.enable === false) {
+    new $.zui.Messager('浏览器不支持本地存储, 无法保存上传历史记录', {
+        icon: 'bell',
+        time: 4000,
+        type: 'primary',
+        placement: 'top'
+    }).show();
+
+    console.log('浏览器不支持本地存储');
+}
+
+/** 
+ * javascript parseUrl函数解析url获取网址url参数 
+ * https://www.cnblogs.com/lazb/p/10144471.html
+ * 使用示例：
+ * var myURL = parseURL('http://abc.com:8080/dir/index.html?id=255&m=hello#top');
+ * myURL.file; // = 'index.html'
+ * myURL.hash; // = 'top'
+ * myURL.host; // = 'abc.com'
+ * myURL.query; // = '?id=255&m=hello'
+ * myURL.params; // = Object = { id: 255, m: hello }
+ * myURL.path; // = '/dir/index.html'
+ * myURL.segments; // = Array = ['dir', 'index.html']
+ * myURL.port; // = '8080'
+ * myURL.protocol; // = 'http'
+ * myURL.source; // = 'http://abc.com:8080/dir/index.html?id=255&m=hello#top'
+*/
+
+function parseURL(url) {
+    var a = document.createElement('a');
+    a.href = url;
+    return {
+        source: url,
+        protocol: a.protocol.replace(':', ''),
+        host: a.hostname,
+        port: a.port,
+        query: a.search,
+        params: (function () {
+            var ret = {},
+                seg = a.search.replace(/^\?/, '').split('&'),
+                len = seg.length, i = 0, s;
+            for (; i < len; i++) {
+                if (!seg[i]) { continue; }
+                s = seg[i].split('=');
+                ret[s[0]] = s[1];
+            }
+            return ret;
+        })(),
+        file: (a.pathname.match(/\/([^\/?#]+)$/i) || [, ''])[1],
+        hash: a.hash.replace('#', ''),
+        path: a.pathname.replace(/^([^\/])/, '/$1'),
+        relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [, ''])[1],
+        segments: a.pathname.replace(/^\//, '').split('/')
+    };
+}
+
+/** jQuery 读取文件 readTxt('../admin/version.php'); */
+function readTxt(filePath = '../admin/version.php') {
+    $.get(filePath, function (data) {
+        var lines = data.split("\n"); //按行读取
+        $.each(lines, function (i, v) {
+            console.log(v);
+        });
+    });
+}

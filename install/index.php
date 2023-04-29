@@ -1,8 +1,8 @@
 <?php
-require_once __DIR__ . '/../application/function.php';
+require_once __DIR__ . '/../app/function.php';
 clearstatcache();
 // 存在程序锁则跳转主页
-if (file_exists(APP_ROOT . '/install/install.lock')) {
+if (file_exists(APP_ROOT . '/config/install.lock')) {
     exit(header("Location:/../index.php"));
 }
 $phpEnv = (PHP_VERSION >= 5.6) ? true : false;
@@ -10,7 +10,7 @@ $fileinfo = extension_loaded('fileinfo') ? true : false;
 $gd = extension_loaded('gd') ? true :  false;
 $openssl = extension_loaded('openssl') ? true :  false;
 
-$file = substr(base_convert(fileperms(APP_ROOT . "/application/upload.php"), 10, 8), 3);
+$file = substr(base_convert(fileperms(APP_ROOT . "/app/upload.php"), 10, 8), 3);
 if (IS_WIN) {
     $file_php = true;
     $i_wjj =  true;
@@ -191,7 +191,7 @@ function checkPASS($name)
         </div>
         <?php echo 'Copyright © 2018-' . date('Y'); ?>
         <a href="https://png.cm/" target="_blank">EasyImage</a> By
-        <a href="https://blog.png.cm/902.html" target="_blank">Icret</a> Version:<a href="https://github.com/icret/EasyImages2.0" target="_blank"><?php echo get_current_verson(); ?></a>
+        <a href="https://blog.png.cm/902.html" target="_blank">Icret</a> Version:<a href="https://github.com/icret/EasyImages2.0" target="_blank"><?php echo APP_VERSION; ?></a>
     </footer>
 </body>
 

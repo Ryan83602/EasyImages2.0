@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . '/../application/function.php';
+require_once __DIR__ . '/../app/function.php';
 // 存在程序锁则跳转主页
-if (file_exists(APP_ROOT . '/install/install.lock')) {
+if (file_exists(APP_ROOT . '/config/install.lock')) {
     exit(header("Location:/../index.php"));
 }
 
@@ -66,20 +66,20 @@ if ($state !== 'checked') {
             <div class="form-group">
                 <label class="col-sm-2 ">管理账号</label>
                 <div class="col-md-6 col-sm-10">
-                    <input type="text" class="form-control" name="user" value="" placeholder="请以大小写英文或数字输入管理员账号" onkeyup="this.value=this.value.replace(/[^\w\.\/]/ig,'')">
+                    <input type="text" class="form-control" name="user" value="admin" placeholder="请以大小写英文或数字输入管理员账号" onkeyup="this.value=this.value.replace(/[^\w\.\/]/ig,'')">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 ">管理密码</label>
                 <span class="message">请输入8~18位密码</span>
                 <div class="col-md-6 col-sm-10 register">
-                    <input type="text" class="form-control inp" name="password" value="" required="required" placeholder="请使用英文输入法输入密码并不小于8位数" onkeyup="this.value=this.value.replace(/\s/g,'')">
+                    <input type="text" class="form-control inp" name="password" value="admin@123" required="required" placeholder="请使用英文输入法输入密码并不小于8位数" onkeyup="this.value=this.value.replace(/\s/g,'')">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 ">确认密码</label>
                 <div class="col-md-6 col-sm-10">
-                    <input type="text" class="form-control" name="repassword" value="" required="required" placeholder="确认密码" onkeyup="this.value=this.value.replace(/\s/g,'')">
+                    <input type="text" class="form-control" name="repassword" value="admin@123" required="required" placeholder="确认密码" onkeyup="this.value=this.value.replace(/\s/g,'')">
                 </div>
             </div>
             <div class="form-group">
@@ -181,7 +181,7 @@ if ($state !== 'checked') {
         </div>
         <?php echo 'Copyright © 2018-' . date('Y'); ?>
         <a href="https://png.cm/" target="_blank">EasyImage</a> By
-        <a href="https://blog.png.cm/902.html" target="_blank">Icret</a> Version:<a href="https://github.com/icret/EasyImages2.0" target="_blank"><?php echo get_current_verson(); ?></a>
+        <a href="https://blog.png.cm/902.html" target="_blank">Icret</a> Version:<a href="https://github.com/icret/EasyImages2.0" target="_blank"><?php echo APP_VERSION; ?></a>
     </footer>
 </body>
 

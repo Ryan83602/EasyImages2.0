@@ -2,16 +2,16 @@
 /*
  * 统计中心
  */
-require_once '../application/header.php';
-require_once APP_ROOT . '/application/chart.php';
+require_once '../app/header.php';
+require_once APP_ROOT . '/app/chart.php';
 
 // 检测是否开启统计
-if (!$config['chart_on']) exit(header('Location: ' . $config['domain'] . '?chart#closed'));
+if (!$config['chart_on'] || !is_who_login('admin')) exit(header('Location: ' . $config['domain'] . '?hart#closed'));
 
 // 检测登录
 if (!is_who_login('admin')) {
     checkLogin();
-    exit(require_once APP_ROOT . '/application/footer.php');
+    exit(require_once APP_ROOT . '/app/footer.php');
 }
 // 删除统计文件
 if (isset($_POST['del_total'])) {
@@ -85,7 +85,7 @@ if (is_array($char_data)) {
         <div class="col-xs-3 alert alert-primary autoshadow">
             缓存文件
             <hr />
-            <?php printf("%u 张", getFileNumber(APP_ROOT . $config['path'] . 'thumbnails/')); ?>
+            <?php printf("%u 张", getFileNumber(APP_ROOT . $config['path'] . 'cache/')); ?>
         </div>
         <div class="col-xs-3 alert alert-primary autoshadow">
             可疑图片
@@ -120,7 +120,7 @@ if (is_array($char_data)) {
         <div class="col-xs-3 alert alert-primary autoshadow">
             当前版本
             <hr />
-            <?php echo get_current_verson(); ?>
+            <?php echo APP_VERSION; ?>
         </div>
     </div>
     <div class="col-md-12  col-xs-12">
@@ -238,4 +238,4 @@ if (is_array($char_data)) {
     document.title = "图床统计信息 - <?php echo $config['title']; ?>";
 </script>
 
-<?php require_once APP_ROOT . '/application/footer.php';
+<?php require_once APP_ROOT . '/app/footer.php';
